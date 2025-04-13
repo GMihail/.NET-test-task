@@ -1,0 +1,8 @@
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.RazorAssemblyInfo.cache
+C:\Users\ADMIN\Desktop\Shop\obj\Debug\net8.0\Shop - Backup.RazorAssemblyInfo.cs

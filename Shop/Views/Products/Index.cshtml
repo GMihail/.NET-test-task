@@ -1,0 +1,24 @@
+﻿@model List<Product>
+
+<h1>Товары</h1>
+
+<form asp-action="Index" method="get">
+    <input type="text" name="searchTerm" placeholder="Поиск..." />
+    <button type="submit">Найти</button>
+</form>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="text-success">@product.Price.ToString("C")</p>
+                    <a asp-controller="Cart" asp-action="Add" asp-route-id="@product.Id" class="btn btn-primary">В корзину</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
