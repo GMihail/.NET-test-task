@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "E:\\GitProjects\\.NET-test-task\\Shop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|solutionrelative:shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|solutionrelative:shop\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|solutionrelative:shop\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop\\shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|solutionrelative:shop\\shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop\\shop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{05DB07FF-3070-4D52-A53B-DC485D0B7B32}|Shop\\Shop.csproj|solutionrelative:shop\\shop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Shop",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Shop.csproj",
-              "RelativeDocumentMoniker": "Shop\\Shop.csproj",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Shop.csproj",
-              "RelativeToolTip": "Shop\\Shop.csproj",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
+              "RelativeDocumentMoniker": "Shop.csproj",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
+              "RelativeToolTip": "Shop.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-09T19:54:07.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Shop",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Shop.csproj",
-              "RelativeDocumentMoniker": "Shop\\Shop.csproj",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Shop.csproj",
-              "RelativeToolTip": "Shop\\Shop.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-09T19:53:59.33Z",
+              "WhenOpened": "2025-04-13T21:26:25.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Shop\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Shop\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:53:47.509Z",
+              "WhenOpened": "2025-04-13T20:10:53.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Shop\\Models\\ErrorViewModel.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Shop\\Models\\ErrorViewModel.cs",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:53:40.603Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-13T20:09:35.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Program.cs",
-              "RelativeDocumentMoniker": "Shop\\Program.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop\\Program.cs",
-              "RelativeToolTip": "Shop\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T19:30:28.785Z",
+              "WhenOpened": "2025-04-13T19:40:53.725Z",
               "EditorCaption": ""
             }
           ]

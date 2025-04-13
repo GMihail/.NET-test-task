@@ -4,10 +4,10 @@ using Supabase.Postgrest.Models;
 
 namespace Shop.Models
 {
-    [Table("products")] // Указываем имя таблицы в Supabase
+    [Table("products")]
     public class Product : BaseModel
     {
-        [PrimaryKey("id")] // Первичный ключ
+        [PrimaryKey("id")]
         public int Id { get; set; }
 
         [Column("name")]
