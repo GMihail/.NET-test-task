@@ -1,21 +1,32 @@
 ﻿@model List<Product>
+
 <h1>Товары</h1>
 
-<form asp-action="Index" method="get">
-    <input type="text" name="searchTerm" placeholder="Поиск..." />
-    <button type="submit">Найти</button>
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="searchTerm" class="form-control" placeholder="Поиск..." />
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </div>
 </form>
 
-<div class="row">
+<div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var product in Model)
     {
-        <div class="col-md-4 mb-4">
-            <div class="card">
+        <div class="col">
+            <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">@product.Description</p>
-                    <p class="text-success">@product.Price.ToString("C")</p>
-                    <a asp-controller="Cart" asp-action="Add" asp-route-id="@product.Id" class="btn btn-primary">В корзину</a>
+                    <p class="text-success fw-bold">@product.Price.ToString("C")</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <form asp-controller="Cart" asp-action="Add" method="post">
+                        <input type="hidden" name="id" value="@product.Id" />
+                        <div class="input-group">
+                            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 70px;" />
+                            <button type="submit" class="btn btn-primary">В корзину</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

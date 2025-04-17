@@ -18,4 +18,5 @@ public class ProductsController : Controller
 
         return View(products.Models);
     }
+
 }

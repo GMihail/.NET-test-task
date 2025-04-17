@@ -147,3 +147,6 @@ C:\Users\ADMIN\Documents\GitHub\.NET-test-task\Shop\obj\Debug\net8.0\refint\Shop
 C:\Users\ADMIN\Documents\GitHub\.NET-test-task\Shop\obj\Debug\net8.0\Shop.pdb
 C:\Users\ADMIN\Documents\GitHub\.NET-test-task\Shop\obj\Debug\net8.0\Shop.genruntimeconfig.cache
 C:\Users\ADMIN\Documents\GitHub\.NET-test-task\Shop\obj\Debug\net8.0\ref\Shop.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

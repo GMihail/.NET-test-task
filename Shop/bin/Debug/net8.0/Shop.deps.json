@@ -8,11 +8,26 @@
     ".NETCoreApp,Version=v8.0": {
       "Shop/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Supabase.Gotrue": "6.0.3",
+          "Supabase.Postgrest": "4.1.0",
           "postgrest-csharp": "3.5.1",
+          "realtime-csharp": "6.0.3",
           "Supabase": "1.1.1"
         },
         "runtime": {
           "Shop.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53112"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {},
@@ -48,6 +63,30 @@
           "lib/net8.0/Microsoft.IdentityModel.Logging.dll": {
             "assemblyVersion": "7.5.1.0",
             "fileVersion": "7.5.1.50405"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/7.0.3": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "7.5.1",
+          "Microsoft.IdentityModel.Tokens": "7.5.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.IdentityModel.Protocols.dll": {
+            "assemblyVersion": "7.0.3.0",
+            "fileVersion": "7.0.3.41017"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/7.0.3": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "7.0.3",
+          "System.IdentityModel.Tokens.Jwt": "7.5.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "assemblyVersion": "7.0.3.0",
+            "fileVersion": "7.0.3.41017"
           }
         }
       },
@@ -92,13 +131,21 @@
           "supabase-core": "0.0.3"
         }
       },
+      "realtime-csharp/6.0.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "Websocket.Client": "5.1.1",
+          "postgrest-csharp": "3.5.1",
+          "supabase-core": "0.0.3"
+        }
+      },
       "Supabase/1.1.1": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "Supabase.Core": "1.0.0",
           "Supabase.Functions": "2.0.0",
           "Supabase.Gotrue": "6.0.3",
-          "Supabase.Postgrest": "4.0.3",
+          "Supabase.Postgrest": "4.1.0",
           "Supabase.Realtime": "7.0.2",
           "Supabase.Storage": "2.0.2"
         },
@@ -143,15 +190,15 @@
           }
         }
       },
-      "Supabase.Postgrest/4.0.3": {
+      "Supabase.Postgrest/4.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "Supabase.Core": "1.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Supabase.Postgrest.dll": {
-            "assemblyVersion": "4.0.3.0",
-            "fileVersion": "4.0.3.0"
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.0"
           }
         }
       },
@@ -159,7 +206,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "Supabase.Core": "1.0.0",
-          "Supabase.Postgrest": "4.0.3",
+          "Supabase.Postgrest": "4.1.0",
           "Websocket.Client": "5.1.1"
         },
         "runtime": {
@@ -225,6 +272,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rwxaZYHips5M9vqxRkGfJthTx+Ws4O4yCuefn17J371jL3ouC5Ker43h2hXb5yd9BMnImE9rznT75KJHm6bMgg==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.0",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -259,6 +313,20 @@
       "sha512": "sha512-PnpAQX20BAiDIPYmWUyQSlEaWD8BLXzHpiDGTCT568Cs0ReOeyzNe401LzCeiv6ilug/KefVeV1CeqtCHTo8dw==",
       "path": "microsoft.identitymodel.logging/7.5.1",
       "hashPath": "microsoft.identitymodel.logging.7.5.1.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols/7.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BtwR+tctBYhPNygyZmt1Rnw74GFrJteW+1zcdIgyvBCjkek6cNwPPqRfdhzCv61i+lwyNomRi8+iI4QKd4YCKA==",
+      "path": "microsoft.identitymodel.protocols/7.0.3",
+      "hashPath": "microsoft.identitymodel.protocols.7.0.3.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/7.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W97TraHApDNArLwpPcXfD+FZH7njJsfEwZE9y9BoofeXMS8H0LBBobz0VOmYmMK4mLdOKxzN7SFT3Ekg0FWI3Q==",
+      "path": "microsoft.identitymodel.protocols.openidconnect/7.0.3",
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Tokens/7.5.1": {
       "type": "package",
@@ -295,6 +363,13 @@
       "path": "postgrest-csharp/3.5.1",
       "hashPath": "postgrest-csharp.3.5.1.nupkg.sha512"
     },
+    "realtime-csharp/6.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bQHuH/HtIgVufIo+DNCOlrk8uaz8WZzAW2AWZJCZgsjh8qYMM4NVxy7kepfdrplno+A4+/PafYsH/108d+gFhA==",
+      "path": "realtime-csharp/6.0.3",
+      "hashPath": "realtime-csharp.6.0.3.nupkg.sha512"
+    },
     "Supabase/1.1.1": {
       "type": "package",
       "serviceable": true,
@@ -330,12 +405,12 @@
       "path": "supabase.gotrue/6.0.3",
       "hashPath": "supabase.gotrue.6.0.3.nupkg.sha512"
     },
-    "Supabase.Postgrest/4.0.3": {
+    "Supabase.Postgrest/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hpDIh+E5bDgZiHMuM6l+RDm9WWlt/T3fXXFQoqzlsrJFesFMNzkK9feVBG5egJyL/OlwmxuLsnPkR7O+bV3Vcw==",
-      "path": "supabase.postgrest/4.0.3",
-      "hashPath": "supabase.postgrest.4.0.3.nupkg.sha512"
+      "sha512": "sha512-DwgBVeU3Xjo1pr7vJ7EiTEHFHa7bN4CwOvsiDqTFfT5Q8Dq1Ok/KT7P6XUbs578zYA2uQb7II8TLo0dfv6Qx5g==",
+      "path": "supabase.postgrest/4.1.0",
+      "hashPath": "supabase.postgrest.4.1.0.nupkg.sha512"
     },
     "Supabase.Realtime/7.0.2": {
       "type": "package",

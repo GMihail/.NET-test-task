@@ -1,4 +1,32 @@
-﻿<div class="text-center">
-    <h1 class="display-4">DVS</h1>
-    <p>ГЛАВНАЯ СТРАНИЦА - НАДО СДЕЛАТЬ</a>.</p>
+﻿<div class="text-center hero-section">
+    <h1 class="display-4">Добро пожаловать в наш магазин!</h1>
+    <p class="lead">Лучшие товары по выгодным ценам</p>
+    <a asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg">Смотреть товары</a>
+    
+    <div class="mt-5 features">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Быстрая доставка</h3>
+                <p>Доставка по всей России за 1-3 дня</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Гарантия качества</h3>
+                <p>Все товары проходят проверку</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Поддержка 24/7</h3>
+                <p>Наши операторы всегда на связи</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+    .hero-section {
+        padding: 5rem 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-bg.jpg');
+        background-size: cover;
+        color: white;
+        margin-bottom: 3rem;
+    }
+</style>

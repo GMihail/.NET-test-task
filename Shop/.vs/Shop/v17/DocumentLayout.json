@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "E:\\GitProjects\\.NET-test-task\\Shop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:shop.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Shop",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
-              "RelativeDocumentMoniker": "Shop.csproj",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
-              "RelativeToolTip": "Shop.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-13T21:26:25.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-13T20:09:35.377Z",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAwE4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T20:09:35.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAcwEQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T20:09:14.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginModel.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Models\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T19:42:18.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAA3AAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAqwHYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T19:40:53.725Z",
+              "WhenOpened": "2025-04-17T19:41:17.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAkwFMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T19:38:55.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterModel.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Models\\RegisterModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T19:36:10.992Z",
               "EditorCaption": ""
             }
           ]

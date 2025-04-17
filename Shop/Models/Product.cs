@@ -1,22 +1,18 @@
 ﻿using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
-using Supabase.Postgrest.Models;
 
-namespace Shop.Models
+[Table("products")]
+public class Product : BaseModel
 {
-    [Table("products")]
-    public class Product : BaseModel
-    {
-        [PrimaryKey("id")]
-        public int Id { get; set; }
+    [PrimaryKey("id", false)]
+    public long Id { get; set; }
 
-        [Column("name")]
-        public string Name { get; set; } = string.Empty;
+    [Column("name")]
+    public string Name { get; set; } = "Неизвестный товар"; // Значение по умолчанию
 
-        [Column("price")]
-        public decimal Price { get; set; }
+    [Column("price")]
+    public decimal Price { get; set; } = 0;
 
-        [Column("description")]
-        public string? Description { get; set; }
-    }
+    [Column("description")]
+    public string Description { get; set; } = string.Empty;
 }
