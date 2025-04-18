@@ -1025,23 +1025,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Дядя Миша\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
+    "C:\\Программы\\Visual_Studio_Instruments\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\GitHub\\.NET-test-task\\Shop\\Shop.csproj",
       "projectName": "Shop",
-      "projectPath": "E:\\GitProjects\\.NET-test-task\\Shop\\Shop.csproj",
-      "packagesPath": "C:\\Users\\Дядя Миша\\.nuget\\packages\\",
-      "outputPath": "E:\\GitProjects\\.NET-test-task\\Shop\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\Documents\\GitHub\\.NET-test-task\\Shop\\Shop.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\Documents\\GitHub\\.NET-test-task\\Shop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Программы\\Visual_Studio_Instruments\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Дядя Миша\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1063,11 +1063,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1118,7 +1113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

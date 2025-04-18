@@ -20,9 +20,6 @@ namespace Shop.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        /// <summary>
-        /// Регистрация нового пользователя
-        /// </summary>
         public async Task<User?> SignUp(string email, string password, string username)
         {
             try
@@ -31,7 +28,7 @@ namespace Shop.Services
 
                 if (response?.User?.Id != null)
                 {
-                    await _supabase.From<Profile>()
+                    await _supabase.From<Profile>()//ОШИБКА
                         .Insert(new Profile
                         {
                             UserId = response.User.Id,
