@@ -1,11 +1,14 @@
 ﻿using Supabase;
 using Supabase.Gotrue;
+using Supabase.Gotrue.Interfaces;
 using Supabase.Postgrest;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
+using Supabase.Postgrest.Exceptions;
+using Microsoft.AspNetCore.Authentication.OAuth;
 
 namespace Shop.Services
 {
@@ -24,24 +27,43 @@ namespace Shop.Services
         {
             try
             {
+                // 1. Регистрация пользователя
                 var response = await _supabase.Auth.SignUp(email, password);
 
-                if (response?.User?.Id != null)
+                if (response?.User?.Id == null)
                 {
-                    await _supabase.From<Profile>()//ОШИБКА
-                        .Insert(new Profile
-                        {
-                            UserId = response.User.Id,
-                            Username = username
-                        });
+                    Console.WriteLine("ОШИБКА: Не получен ID пользователя");
+                    return null;
                 }
 
-                return response?.User;
+                // 2. Преобразование ID в Guid
+                if (!Guid.TryParse(response.User.Id, out var userId))
+                {
+                    Console.WriteLine($"ОШИБКА: Некорректный формат ID: {response.User.Id}");
+                    return null;
+                }
+
+                // 3. Создание профиля с явным указанием столбца
+                await _supabase.From<Profile>()
+                    .Insert(new Profile
+                    {
+                        UserId = userId,
+                        Username = username
+                    }, new QueryOptions
+                    {
+                        Returning = QueryOptions.ReturnType.Minimal
+                    });
+
+                return response.User;
+            }
+            catch (PostgrestException ex)
+            {
+                Console.WriteLine($"POSTGREST ERROR: {ex.Message}");
+                throw;
             }
             catch (Exception ex)
             {
-                // Логирование ошибки
-                Console.WriteLine($"Ошибка регистрации: {ex.Message}");
+                Console.WriteLine($"GENERAL ERROR: {ex.Message}");
                 throw;
             }
         }
@@ -96,7 +118,7 @@ namespace Shop.Services
             try
             {
                 return await _supabase.From<Profile>()
-                    .Where(x => x.UserId == userId)
+                    .Where(x => x.UserId == Guid.Parse(userId)) // Преобразуем string в Guid
                     .Single();
             }
             catch (Exception ex)
@@ -137,7 +159,8 @@ namespace Shop.Services
     public class Profile : BaseModel
     {
         [PrimaryKey("user_id", false)]
-        public string UserId { get; set; }
+        [Column("user_id")]
+        public Guid UserId { get; set; }  // Точное соответствие столбцу в БД
 
         [Column("username")]
         public string Username { get; set; }
