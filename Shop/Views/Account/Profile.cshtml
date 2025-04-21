@@ -1,0 +1,22 @@
+﻿@model ProfileView
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>Личный кабинет</h3>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-sm-3">Email:</div>
+                <div class="col-sm-9">@Model.Email</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-3">Никнейм:</div>
+                <div class="col-sm-9">@Model.Username</div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Выйти</a>
+        </div>
+    </div>
+</div>

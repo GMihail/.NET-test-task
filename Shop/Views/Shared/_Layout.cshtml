@@ -33,8 +33,23 @@
                                 <span id="cartCount" class="badge bg-danger">0</span>
                             </a>
                         </li>
-
-                        <!-- Новая кнопка входа/выхода -->
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="Profile">
+                                    <i class="bi bi-person-circle"></i>
+                                    @User.Identity.Name
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="nav-link btn btn-link">
+                                        <i class="bi bi-box-arrow-right"></i> Выйти
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        <!-- Кнопка входа/выхода -->
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
