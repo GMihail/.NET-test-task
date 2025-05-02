@@ -1,22 +1,26 @@
-﻿@model ProfileView
+﻿@model ProfileViewModel
 
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h3>Личный кабинет</h3>
-        </div>
-        <div class="card-body">
-            <div class="row mb-3">
-                <div class="col-sm-3">Email:</div>
-                <div class="col-sm-9">@Model.Email</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">@Model.Username</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Дата регистрации:</strong>
+                        @Model.RegisteredDate.ToLocalTime().ToString("dd.MM.yyyy")
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form asp-action="Logout" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-box-arrow-right"></i> Выйти
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-sm-3">Никнейм:</div>
-                <div class="col-sm-9">@Model.Username</div>
-            </div>
-        </div>
-        <div class="card-footer">
-            <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Выйти</a>
         </div>
     </div>
 </div>

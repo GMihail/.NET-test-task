@@ -2,7 +2,13 @@
 using Shop.Services;
 using Shop.Models;
 using System.Threading.Tasks;
-using Supabase.Gotrue; // Добавляем для работы с Session
+using Supabase.Gotrue;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Shop.Controllers // Важно: контроллеры должны быть в пространстве имен Controllers
 {
@@ -23,13 +29,9 @@ namespace Shop.Controllers // Важно: контроллеры должны б
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] // Защита от CSRF
-        public async Task<IActionResult> Login(LoginModel model, string? returnUrl = null)
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            ViewData["ReturnUrl"] = returnUrl;
-
-            if (!ModelState.IsValid)
-                return View(model);
+            if (!ModelState.IsValid) return View(model);
 
             var session = await _authService.SignIn(model.Email, model.Password);
             if (session == null)
@@ -38,7 +40,26 @@ namespace Shop.Controllers // Важно: контроллеры должны б
                 return View(model);
             }
 
-            return LocalRedirect(returnUrl ?? Url.Content("~/"));
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, session.User.Id),
+                new Claim(ClaimTypes.Name, session.User.Email),
+                new Claim(ClaimTypes.Email, session.User.Email)
+            };
+
+            var identity = new ClaimsIdentity(claims,
+                CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(identity),
+                new AuthenticationProperties
+                {
+                    IsPersistent = model.RememberMe,
+                    ExpiresUtc = DateTime.UtcNow.AddDays(30)
+                });
+
+            return LocalRedirect(model.ReturnUrl ?? Url.Content("~/"));
         }
 
         [HttpGet]
@@ -70,8 +91,21 @@ namespace Shop.Controllers // Важно: контроллеры должны б
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             await _authService.SignOut();
             return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize]
+        public IActionResult Profile()
+        {
+            // Используем только данные из куки
+            return View(new ProfileViewModel
+            {
+                Username = User.Identity?.Name ?? "Гость",
+                Email = User.Identity?.Name ?? "Не указан",
+                RegisteredDate = DateTime.Now
+            });
         }
 
         // Обработка случая, когда доступ запрещен

@@ -5,17 +5,17 @@ using Supabase.Postgrest.Models;
 public class CartItem : BaseModel
 {
     [PrimaryKey("id", false)]
-    public long Id { get; set; }
+    [Column("id")]
+    public int Id { get; set; }
 
     [Column("user_id")]
-    public Guid UserId { get; set; }
+    public string UserId { get; set; } 
 
     [Column("product_id")]
     public long ProductId { get; set; }
-
     [Column("quantity")]
-    public int Quantity { get; set; } = 1;
+    public int Quantity { get; set; } = 1; 
 
-    [Reference(typeof(Product))]
-    public Product Product { get; set; }
+    [Column("created_at")]
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow; 
 }

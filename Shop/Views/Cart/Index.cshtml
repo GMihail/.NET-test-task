@@ -1,106 +1,55 @@
-﻿@model List<CartItem>
+﻿@model List<CartItemViewModel>
 
-<div class="container mt-4">
-    <h1 class="mb-4">Ваша корзина</h1>
+<h2>Ваша корзина</h2>
 
-    @if (Model.Count == 0 || Model.All(x => x.Product == null))
-    {
-        <div class="alert alert-info">
-            <i class="bi bi-cart-x"></i> Ваша корзина пуста
-        </div>
-        <a asp-controller="Products" asp-action="Index" class="btn btn-primary">
-            <i class="bi bi-arrow-left"></i> Вернуться к товарам
-        </a>
-    }
-    else
-    {
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>Товар</th>
-                        <th>Цена</th>
-                        <th>Количество</th>
-                        <th>Итого</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Where(x => x.Product != null))
-                    {
-                        <tr>
-                            <td>@item.Product.Name</td>
-                            <td>@item.Product.Price.ToString("N2") ₽</td>
-                            <td>
-                                <form asp-action="Update" method="post" class="row g-2 align-items-center">
-                                    <div class="col-auto">
-                                        <input type="hidden" name="id" value="@item.ProductId" />
-                                        <input type="number" name="quantity" value="@item.Quantity"
-                                               min="1" max="99" class="form-control" style="width: 80px;" />
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-sm btn-outline-secondary">
-                                            <i class="bi bi-arrow-clockwise"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </td>
-                            <td>@((item.Product.Price * item.Quantity).ToString("N2")) ₽</td>
-                            <td>
-                                <form asp-action="Remove" method="post">
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="id" value="@item.ProductId" />
-                                </form>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-                <tfoot class="table-active">
-                    <tr>
-                        <td colspan="3" class="text-end fw-bold">Общая сумма:</td>
-                        <td colspan="2" class="fw-bold">
-                            @Model.Where(i => i.Product != null).Sum(i => i.Product.Price * i.Quantity).ToString("N2")) ₽
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Итого</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>
+                        <form asp-action="Update" method="post">
+                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                            <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control" style="width: 80px; display: inline-block;" />
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Обновить</button>
+                        </form>
+                    </td>
+                    <td>@item.TotalPrice.ToString("C")</td>
+                    <td>
+                        <form asp-action="Remove" method="post">
+                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-        <div class="d-flex justify-content-between mt-4">
-            <a asp-controller="Products" asp-action="Index" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left"></i> Продолжить покупки
-            </a>
-            <a asp-action="Checkout" class="btn btn-success btn-lg">
-                Оформить заказ <i class="bi bi-arrow-right"></i>
-            </a>
-        </div>
-    }
-</div>
-
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Обработка форм обновления количества
-            $('form[asp-action="Update"]').on('submit', function (e) {
-                e.preventDefault();
-                $.post($(this).attr('action'), $(this).serialize())
-                    .done(function () {
-                        location.reload();
-                    });
-            });
-
-            // Обработка удаления товара
-            $('form[asp-action="Remove"]').on('submit', function (e) {
-                e.preventDefault();
-                if (confirm('Удалить товар из корзины?')) {
-                    $.post($(this).attr('action'), $(this).serialize())
-                        .done(function () {
-                            location.reload();
-                        });
-                }
-            });
-        });
-    </script>
+    <div class="text-end">
+        <h4>Общая сумма: @Model.Sum(x => x.TotalPrice).ToString("C")</h4>
+        <a href="#" class="btn btn-primary">Оформить заказ</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        Ваша корзина пуста
+    </div>
+    <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">
+        Вернуться к товарам
+    </a>
 }

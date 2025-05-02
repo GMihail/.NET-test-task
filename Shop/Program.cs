@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Shop.Services;
-using Supabase.Gotrue.Interfaces;
 using Supabase.Gotrue;
-using System.Text;
+using Supabase.Gotrue.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Конфигурация сервисов
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<CartService>();
 
 // Настройка Supabase
 var supabaseUrl = builder.Configuration["Supabase:Url"]
@@ -22,36 +21,25 @@ builder.Services.AddSingleton(provider => new Supabase.Client(
     supabaseKey,
     new Supabase.SupabaseOptions
     {
-        AutoConnectRealtime = true,
-        AutoRefreshToken = true,
+        AutoConnectRealtime = false,
+        AutoRefreshToken = true, // Включаем автообновление токена
         SessionHandler = new SupabaseSessionHandler(
             provider.GetRequiredService<IHttpContextAccessor>())
     }));
 
-// Настройка аутентификации
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+// Настройка аутентификации (ТОЛЬКО COOKIE)
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(supabaseKey)),
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = true
-        };
-
-        options.Events = new JwtBearerEvents
-        {
-            OnMessageReceived = context =>
-            {
-                context.Token = context.Request.Cookies["sb-access-token"];
-                return Task.CompletedTask;
-            }
-        };
+        options.Cookie.Name = "Shop.Auth";
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+        options.SlidingExpiration = true;
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.Cookie.SameSite = SameSiteMode.Lax;
     });
-
-builder.Services.AddAuthorization();
 
 // Регистрация сервисов
 builder.Services.AddScoped<AuthService>();
@@ -70,13 +58,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "account",
-    pattern: "account/{action=Login}",
-    defaults: new { controller = "Account" });
-
-app.UseStatusCodePagesWithRedirects("/Account/AccessDenied");
-
+app.UseStatusCodePagesWithRedirects("/Home/Error");
 app.Run();
 
 public class SupabaseSessionHandler : IGotrueSessionPersistence<Session>

@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "E:\\GitProjects\\.NET-test-task\\Shop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\shared\\cartcount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\shared\\cartcount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|e:\\gitprojects\\.net-test-task\\shop\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA6287D6-A0DA-4D9D-8DD8-C04240C9E01D}|Shop.csproj|solutionrelative:services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-19T17:38:54.227Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "site.css",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-19T17:38:34.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "site.js",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-19T17:38:26.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAE4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T19:41:17.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Services\\AuthService.cs",
-              "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAxwDwAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:04:14.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE0AAAABAAAA",
+              "Title": "CartCount.cshtml",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Shared\\CartCount.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\CartCount.cshtml",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Shared\\CartCount.cshtml",
+              "RelativeToolTip": "Views\\Shared\\CartCount.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T20:09:35.764Z",
+              "WhenOpened": "2025-05-02T15:17:35.274Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-17T20:09:14.233Z",
+              "Title": "CartService.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "Services\\CartService.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Services\\CartService.cs",
+              "RelativeToolTip": "Services\\CartService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T15:16:08.535Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "Models\\LoginModel.cs",
-              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Models\\LoginModel.cs",
-              "RelativeToolTip": "Models\\LoginModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "E:\\GitProjects\\.NET-test-task\\Shop\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CartController.cs",
+              "ToolTip": "E:\\GitProjects\\.NET-test-task\\Shop\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Controllers\\CartController.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAYwKIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T19:42:18.215Z",
+              "WhenOpened": "2025-05-02T15:14:34.381Z",
               "EditorCaption": ""
             }
           ]

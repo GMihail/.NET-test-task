@@ -1,4 +1,5 @@
-﻿using Supabase;
+﻿using Shop.Models;
+using Supabase;
 using Supabase.Gotrue;
 using Supabase.Gotrue.Interfaces;
 using Supabase.Postgrest;
@@ -36,18 +37,11 @@ namespace Shop.Services
                     return null;
                 }
 
-                // 2. Преобразование ID в Guid
-                if (!Guid.TryParse(response.User.Id, out var userId))
-                {
-                    Console.WriteLine($"ОШИБКА: Некорректный формат ID: {response.User.Id}");
-                    return null;
-                }
-
-                // 3. Создание профиля с явным указанием столбца
+                // 2. Создание профиля
                 await _supabase.From<Profile>()
                     .Insert(new Profile
                     {
-                        UserId = userId,
+                        UserId = response.User.Id, 
                         Username = username
                     }, new QueryOptions
                     {
@@ -117,8 +111,9 @@ namespace Shop.Services
         {
             try
             {
+                // Используем правильный синтаксис для Supabase.Postgrest
                 return await _supabase.From<Profile>()
-                    .Where(x => x.UserId == Guid.Parse(userId)) // Преобразуем string в Guid
+                    .Where(x => x.UserId == userId)
                     .Single();
             }
             catch (Exception ex)
@@ -127,7 +122,6 @@ namespace Shop.Services
                 return null;
             }
         }
-
         /// <summary>
         /// Обновление профиля пользователя
         /// </summary>
@@ -150,22 +144,14 @@ namespace Shop.Services
                 throw;
             }
         }
-    }
-
-    /// <summary>
-    /// Модель профиля пользователя
-    /// </summary>
-    [Table("profiles")]
-    public class Profile : BaseModel
-    {
-        [PrimaryKey("user_id", false)]
-        [Column("user_id")]
-        public Guid UserId { get; set; }  // Точное соответствие столбцу в БД
-
-        [Column("username")]
-        public string Username { get; set; }
-
-        [Column("created_at")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public async Task<DateTime> GetUserRegistrationDate(string userId)
+        {
+            var user = await _supabase.Auth.GetUser(userId);
+            return user?.CreatedAt ?? DateTime.UtcNow;
+        }
+        public async Task<User?> GetUserById(string userId)
+        {
+            return await _supabase.Auth.GetUser(userId);
+        }
     }
 }

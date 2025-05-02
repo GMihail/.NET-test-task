@@ -2,12 +2,12 @@
 
 <h1>Товары</h1>
 
-<form asp-action="Index" method="get" class="mb-4">
-    <div class="input-group">
-        <input type="text" name="searchTerm" class="form-control" placeholder="Поиск..." />
-        <button type="submit" class="btn btn-primary">Найти</button>
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
     </div>
-</form>
+}
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach (var product in Model)
@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-footer bg-transparent">
                     <form asp-controller="Cart" asp-action="Add" method="post">
-                        <input type="hidden" name="id" value="@product.Id" />
+                        <input type="hidden" name="productId" value="@product.Id" />
                         <div class="input-group">
                             <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 70px;" />
                             <button type="submit" class="btn btn-primary">В корзину</button>
