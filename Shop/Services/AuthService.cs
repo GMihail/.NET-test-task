@@ -10,6 +10,9 @@ using System;
 using System.Threading.Tasks;
 using Supabase.Postgrest.Exceptions;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using System.Net;
+using System.Net.Http;
+using Supabase.Gotrue.Exceptions;
 
 namespace Shop.Services
 {
@@ -65,24 +68,37 @@ namespace Shop.Services
         /// <summary>
         /// Вход пользователя
         /// </summary>
+
         public async Task<Session?> SignIn(string email, string password)
         {
             try
             {
                 var response = await _supabase.Auth.SignIn(email, password);
+
+                if (response?.User == null)
+                {
+                    return null;
+                }
+
                 return response;
+            }
+            catch (Exception ex) when (ex is PostgrestException ||
+                                     (ex is GotrueException gex && gex.Response?.StatusCode == HttpStatusCode.BadRequest))
+            {
+                // Обработка ошибок неверных учетных данных
+                return null;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка входа: {ex.Message}");
+                Console.WriteLine($"SignIn error for {email}: {ex.Message}");
                 throw;
             }
         }
 
-        /// <summary>
-        /// Выход пользователя
-        /// </summary>
-        public async Task SignOut()
+    /// <summary>
+    /// Выход пользователя
+    /// </summary>
+    public async Task SignOut()
         {
             try
             {

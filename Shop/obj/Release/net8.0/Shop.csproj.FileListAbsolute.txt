@@ -48,3 +48,6 @@ E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\refint\Shop.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\Shop.pdb
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\Shop.genruntimeconfig.cache
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\ref\Shop.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Release\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\GitProjects\.NET-test-task\Shop\bin\Release\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

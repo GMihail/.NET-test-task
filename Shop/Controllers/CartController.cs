@@ -40,7 +40,7 @@ namespace Shop.Controllers
                     return View(new List<CartItemViewModel>());
                 }
 
-                var model = await BuildCartViewModel(cartItems);
+                var model = await BuildCartViewModel(userId, cartItems);
                 return View(model);
             }
             catch (Exception ex)
@@ -49,43 +49,6 @@ namespace Shop.Controllers
                 TempData["Error"] = "Не удалось загрузить корзину";
                 return RedirectToAction("Index", "Home");
             }
-        }
-
-        private async Task<List<CartItemViewModel>> BuildCartViewModel(List<CartItem> cartItems)
-        {
-            // Получаем ID товаров из корзины
-            var productIds = cartItems.Select(i => i.ProductId).Distinct().ToList();
-
-            // Альтернативный способ запроса товаров без проблем с переменной 'p'
-            var products = new List<Product>();
-            foreach (var id in productIds)
-            {
-                var response = await _supabase
-                    .From<Product>()
-                    .Where(x => x.Id == id)
-                    .Get();
-
-                if (response.Model != null)
-                    products.Add(response.Model);
-            }
-
-            return cartItems.Select(cartItem =>
-            {
-                var product = products.FirstOrDefault(x => x.Id == cartItem.ProductId);
-
-                return new CartItemViewModel
-                {
-                    Id = cartItem.Id,
-                    Product = product ?? new Product
-                    {
-                        Id = cartItem.ProductId,
-                        Name = "[Товар недоступен]",
-                        Price = 0,
-                        Description = "Этот товар был удален или временно недоступен"
-                    },
-                    Quantity = cartItem.Quantity
-                };
-            }).ToList();
         }
 
         [HttpPost]
@@ -98,7 +61,7 @@ namespace Shop.Controllers
                 if (string.IsNullOrEmpty(userId))
                     return Challenge();
 
-                if (quantity <= 0 || quantity > 100)
+                if (!ValidateQuantity(quantity))
                 {
                     TempData["Error"] = "Недопустимое количество";
                     return RedirectToAction("Index", "Products");
@@ -106,7 +69,7 @@ namespace Shop.Controllers
 
                 await _cartService.AddToCart(userId, productId, quantity);
                 TempData["Success"] = "Товар успешно добавлен в корзину";
-                return RedirectToAction("Index", "Cart");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
@@ -163,36 +126,33 @@ namespace Shop.Controllers
             return User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
 
-        private async Task<bool> ProductExists(long productId)
-        {
-            var response = await _supabase
-                .From<Product>()
-                .Where(p => p.Id == productId)
-                .Get();
-
-            return response.Models.Count > 0;
-        }
-
         private bool ValidateQuantity(int quantity)
         {
             return quantity > 0 && quantity <= 100;
         }
 
         private async Task<List<CartItemViewModel>> BuildCartViewModel(
-            string userId,
-            List<CartItem> cartItems)
+    string userId,
+    List<CartItem> cartItems)
         {
             var productIds = cartItems.Select(i => i.ProductId).Distinct().ToList();
+            var products = new List<Product>();
 
-            var productsResponse = await _supabase
-                .From<Product>()
-                .Where(p => productIds.Contains(p.Id))
-                .Get();
+            // Альтернативный способ запроса товаров без проблем с переменной 'p'
+            foreach (var id in productIds)
+            {
+                var response = await _supabase
+                    .From<Product>()
+                    .Where(x => x.Id == id)
+                    .Get();
+
+                if (response.Model != null)
+                    products.Add(response.Model);
+            }
 
             return cartItems.Select(cartItem =>
             {
-                var product = productsResponse.Models
-                    .FirstOrDefault(p => p.Id == cartItem.ProductId);
+                var product = products.FirstOrDefault(x => x.Id == cartItem.ProductId);
 
                 return new CartItemViewModel
                 {

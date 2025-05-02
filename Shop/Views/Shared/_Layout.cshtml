@@ -26,10 +26,11 @@
                             <a class="nav-link" asp-controller="Cart" asp-action="Index">
                                 <i class="bi bi-cart"></i>
                                 Корзина
-                                <span id="cartCount" class="badge bg-danger">0</span>
+                                <span class="badge bg-danger">
+                                    @await Component.InvokeAsync("CartCount")
+                                </span>
                             </a>
                         </li>
-
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item">
@@ -53,7 +54,7 @@
                                     <i class="bi bi-box-arrow-in-right"></i> Войти
                                 </a>
                             </li>
-                        }**
+                        }
                     </ul>
                 </div>
             </div>

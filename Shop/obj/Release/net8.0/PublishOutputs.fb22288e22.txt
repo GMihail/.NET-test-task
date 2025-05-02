@@ -5,9 +5,12 @@ E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Shop.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Shop.deps.json
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Shop.runtimeconfig.json
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Shop.pdb
+E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Logging.dll
+E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
+E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\Microsoft.IO.RecyclableMemoryStream.dll
 E:\GitProjects\.NET-test-task\Shop\obj\Release\net8.0\PubTmp\Out\MimeMapping.dll

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Shop.Services;
+using Shop.Components;
 using Supabase.Gotrue;
 using Supabase.Gotrue.Interfaces;
 
@@ -8,7 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Конфигурация сервисов
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+
+// Регистрация компонентов и сервисов
+builder.Services.AddScoped<CartCount>();
 builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddSingleton<SupabaseService>();
 
 // Настройка Supabase
 var supabaseUrl = builder.Configuration["Supabase:Url"]
@@ -22,12 +28,12 @@ builder.Services.AddSingleton(provider => new Supabase.Client(
     new Supabase.SupabaseOptions
     {
         AutoConnectRealtime = false,
-        AutoRefreshToken = true, // Включаем автообновление токена
+        AutoRefreshToken = true,
         SessionHandler = new SupabaseSessionHandler(
             provider.GetRequiredService<IHttpContextAccessor>())
     }));
 
-// Настройка аутентификации (ТОЛЬКО COOKIE)
+// Настройка аутентификации
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -41,13 +47,15 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.SameSite = SameSiteMode.Lax;
     });
 
-// Регистрация сервисов
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddSingleton<SupabaseService>();
-
 var app = builder.Build();
 
 // Конвейер middleware
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
@@ -58,7 +66,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.UseStatusCodePagesWithRedirects("/Home/Error");
 app.Run();
 
 public class SupabaseSessionHandler : IGotrueSessionPersistence<Session>
