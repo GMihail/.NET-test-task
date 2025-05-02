@@ -95,22 +95,23 @@ namespace Shop.Controllers
             try
             {
                 var userId = GetCurrentUserId();
-                if (userId == null) return Challenge();
+                if (string.IsNullOrEmpty(userId))
+                    return Challenge();
 
-                if (!await ProductExists(productId))
+                if (quantity <= 0 || quantity > 100)
                 {
-                    TempData["Error"] = "Товар не найден";
+                    TempData["Error"] = "Недопустимое количество";
                     return RedirectToAction("Index", "Products");
                 }
 
                 await _cartService.AddToCart(userId, productId, quantity);
-                TempData["Success"] = "Товар добавлен в корзину";
+                TempData["Success"] = "Товар успешно добавлен в корзину";
                 return RedirectToAction("Index", "Cart");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Ошибка добавления в корзину: {productId}");
-                TempData["Error"] = "Ошибка при добавлении в корзину";
+                _logger.LogError(ex, $"Ошибка добавления товара {productId} в корзину");
+                TempData["Error"] = ex is ArgumentException ? ex.Message : "Ошибка добавления в корзину";
                 return RedirectToAction("Index", "Products");
             }
         }
