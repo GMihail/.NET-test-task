@@ -10,7 +10,7 @@
 - **Database**: PostgreSQL через Supabase
 - **Hosting**: Размещение на Somme.com
 - **Auth**: Cookie-based аутентификация
-
+- **UI**: HTML, CSS, JavaScript
 ## Возможности сайта
 
 ✅ **Система аутентификации**
