@@ -1,8 +1,12 @@
-﻿<div class="text-center hero-section">
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center hero-section">
     <h1 class="display-4">Добро пожаловать в наш магазин!</h1>
     <p class="lead">Лучшие товары по выгодным ценам</p>
     <a asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg">Смотреть товары</a>
-    
+
     <div class="mt-5 features">
         <div class="row">
             <div class="col-md-4">
@@ -21,6 +25,22 @@
     </div>
 </div>
 
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Контакты</h2>
+            <p><i class="bi bi-geo-alt-fill"></i> Казань, ул.Товарищеская, д.31А</p>
+            <p><i class="bi bi-telephone"></i> 8 800 555 35 35</p>
+            <p><i class="bi bi-envelope"></i> shop@example.com</p>
+            <p><i class="bi bi-clock"></i> Пн-Пт: 9:00–20:00<br>Сб-Вс: 10:00–18:00</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Где мы...</h2>
+            <div id="yandex-map" style="width: 100%; height: 300px;"></div>
+        </div>
+    </div>
+</div>
+
 <style>
     .hero-section {
         padding: 5rem 0;
@@ -30,3 +50,35 @@
         margin-bottom: 3rem;
     }
 </style>
+
+@section Scripts {
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e2453ec0-c9f2-4f0e-b7c1-7e6709cda240&lang=ru_RU" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            ymaps.ready(init);
+
+            function init() {
+                var shopLocation = [55.783585, 49.157034];
+
+                var map = new ymaps.Map("yandex-map", {
+                    center: shopLocation,
+                    zoom: 15,
+                    controls: ['zoomControl', 'typeSelector']
+                });
+
+                var placemark = new ymaps.Placemark(shopLocation, {
+                    hintContent: 'Мы находимся здесь',
+                    balloonContent: 'Отделение "ДАС №1"<br>ул.Товарищеская, д.31А'
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/icons/shop.svg',
+                    iconImageSize: [32, 32],
+                    iconImageOffset: [-16, -32]
+                });
+
+                map.geoObjects.add(placemark);
+                placemark.balloon.open();
+            }
+        });
+    </script>
+}
