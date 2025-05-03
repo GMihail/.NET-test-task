@@ -12,13 +12,11 @@ namespace Shop.Services
     {
         private readonly Supabase.Client _supabase;
         private readonly ILogger<CartService> _logger;
-
         public CartService(Supabase.Client supabase, ILogger<CartService> logger)
         {
             _supabase = supabase;
             _logger = logger;
         }
-
         public async Task AddToCart(string userId, long productId, int quantity = 1)
         {
             try
@@ -29,7 +27,6 @@ namespace Shop.Services
                 if (quantity <= 0)
                     throw new ArgumentException("Quantity must be positive");
 
-                // Проверяем существование товара
                 var product = await _supabase
                     .From<Product>()
                     .Where(p => p.Id == productId)
@@ -38,7 +35,6 @@ namespace Shop.Services
                 if (product == null)
                     throw new ArgumentException($"Product with ID {productId} not found");
 
-                // Проверяем наличие товара в корзине
                 var existingItem = await _supabase
                     .From<CartItem>()
                     .Where(x => x.UserId == userId && x.ProductId == productId)
@@ -51,7 +47,6 @@ namespace Shop.Services
                 }
                 else
                 {
-                    // Создаем объект без указания ID
                     var newItem = new CartItem
                     {
                         UserId = userId,
@@ -60,7 +55,6 @@ namespace Shop.Services
                         CreatedAt = DateTime.UtcNow
                     };
 
-                    // Используем Insert без возврата модели
                     await _supabase
                         .From<CartItem>()
                         .Insert(newItem, new QueryOptions { Returning = QueryOptions.ReturnType.Minimal });

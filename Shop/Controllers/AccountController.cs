@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Supabase.Postgrest.Exceptions;
 
 
-namespace Shop.Controllers // Важно: контроллеры должны быть в пространстве имен Controllers
+namespace Shop.Controllers
 {
     public class AccountController : Controller
     {
@@ -33,38 +33,33 @@ namespace Shop.Controllers // Важно: контроллеры должны б
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //Validation
             {
                 return View(model);
             }
 
             try
             {
-                // Пытаемся выполнить вход
                 var session = await _authService.SignIn(model.Email, model.Password);
-
-                // Если пользователь не найден или пароль неверный
                 if (session?.User == null)
                 {
                     ModelState.AddModelError(string.Empty, "Неверный email или пароль");
                     return View(model);
                 }
 
-                // Успешная авторизация - создаем claims
                 var profile = await _authService.GetUserProfile(session.User.Id);
-
                 var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.NameIdentifier, session.User.Id),
-            new Claim(ClaimTypes.Name, profile?.Username ?? session.User.Email),
-            new Claim(ClaimTypes.Email, session.User.Email),
-            new Claim("auth_time", DateTime.UtcNow.ToString("o"))
-        };
+                {
+                    new Claim(ClaimTypes.NameIdentifier, session.User.Id),
+                    new Claim(ClaimTypes.Name, profile?.Username ?? session.User.Email),
+                    new Claim(ClaimTypes.Email, session.User.Email),
+                    new Claim("auth_time", DateTime.UtcNow.ToString("o"))
+                };
 
                 var authProperties = new AuthenticationProperties
                 {
                     IsPersistent = model.RememberMe,
-                    ExpiresUtc = DateTime.UtcNow.AddDays(30),
+                    ExpiresUtc = DateTime.UtcNow.AddDays(5),
                     AllowRefresh = true
                 };
 
@@ -72,13 +67,10 @@ namespace Shop.Controllers // Важно: контроллеры должны б
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)),
                     authProperties);
-
-                // Безопасный редирект
                 return RedirectToLocal(model.ReturnUrl);
             }
             catch (PostgrestException ex) when (ex.Message.Contains("Invalid login credentials"))
             {
-                // Специфичная обработка ошибки неверных учетных данных
                 ModelState.AddModelError(string.Empty, "Неверный email или пароль");
                 return View(model);
             }
@@ -95,7 +87,7 @@ namespace Shop.Controllers // Важно: контроллеры должны б
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            else return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -117,8 +109,6 @@ namespace Shop.Controllers // Важно: контроллеры должны б
                 ModelState.AddModelError(string.Empty, "Ошибка при регистрации пользователя");
                 return View(model);
             }
-
-            // Автоматический вход после регистрации
             await _authService.SignIn(model.Email, model.Password);
             return RedirectToAction("Index", "Home");
         }
@@ -135,16 +125,14 @@ namespace Shop.Controllers // Важно: контроллеры должны б
         [Authorize]
         public IActionResult Profile()
         {
-            // Используем только данные из куки
             return View(new ProfileViewModel
             {
                 Username = User.Identity?.Name ?? "Гость",
-                Email = User.Identity?.Name ?? "Не указан",
+                Email = User.FindFirst(ClaimTypes.Email)?.Value ?? "Не указан",
                 RegisteredDate = DateTime.Now
             });
         }
 
-        // Обработка случая, когда доступ запрещен
         [HttpGet]
         public IActionResult AccessDenied()
         {

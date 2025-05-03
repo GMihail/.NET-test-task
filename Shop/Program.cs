@@ -6,17 +6,13 @@ using Supabase.Gotrue.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Конфигурация сервисов
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
-
-// Регистрация компонентов и сервисов
 builder.Services.AddScoped<CartCount>();
 builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddSingleton<SupabaseService>();
 
-// Настройка Supabase
 var supabaseUrl = builder.Configuration["Supabase:Url"]
     ?? throw new ArgumentNullException("Supabase:Url не настроен");
 var supabaseKey = builder.Configuration["Supabase:Key"]
@@ -33,7 +29,6 @@ builder.Services.AddSingleton(provider => new Supabase.Client(
             provider.GetRequiredService<IHttpContextAccessor>())
     }));
 
-// Настройка аутентификации
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -48,8 +43,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     });
 
 var app = builder.Build();
-
-// Конвейер middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

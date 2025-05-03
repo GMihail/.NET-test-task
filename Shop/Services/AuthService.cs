@@ -31,16 +31,13 @@ namespace Shop.Services
         {
             try
             {
-                // 1. Регистрация пользователя
                 var response = await _supabase.Auth.SignUp(email, password);
-
                 if (response?.User?.Id == null)
                 {
                     Console.WriteLine("ОШИБКА: Не получен ID пользователя");
                     return null;
                 }
 
-                // 2. Создание профиля
                 await _supabase.From<Profile>()
                     .Insert(new Profile
                     {
@@ -50,7 +47,6 @@ namespace Shop.Services
                     {
                         Returning = QueryOptions.ReturnType.Minimal
                     });
-
                 return response.User;
             }
             catch (PostgrestException ex)
@@ -64,11 +60,6 @@ namespace Shop.Services
                 throw;
             }
         }
-
-        /// <summary>
-        /// Вход пользователя
-        /// </summary>
-
         public async Task<Session?> SignIn(string email, string password)
         {
             try
@@ -85,7 +76,6 @@ namespace Shop.Services
             catch (Exception ex) when (ex is PostgrestException ||
                                      (ex is GotrueException gex && gex.Response?.StatusCode == HttpStatusCode.BadRequest))
             {
-                // Обработка ошибок неверных учетных данных
                 return null;
             }
             catch (Exception ex)
@@ -94,11 +84,7 @@ namespace Shop.Services
                 throw;
             }
         }
-
-    /// <summary>
-    /// Выход пользователя
-    /// </summary>
-    public async Task SignOut()
+        public async Task SignOut()
         {
             try
             {
@@ -111,23 +97,14 @@ namespace Shop.Services
                 throw;
             }
         }
-
-        /// <summary>
-        /// Получение текущего пользователя
-        /// </summary>
         public User? GetCurrentUser()
         {
             return _supabase.Auth.CurrentUser;
         }
-
-        /// <summary>
-        /// Получение профиля пользователя
-        /// </summary>
         public async Task<Profile?> GetUserProfile(string userId)
         {
             try
             {
-                // Используем правильный синтаксис для Supabase.Postgrest
                 return await _supabase.From<Profile>()
                     .Where(x => x.UserId == userId)
                     .Single();
@@ -138,9 +115,6 @@ namespace Shop.Services
                 return null;
             }
         }
-        /// <summary>
-        /// Обновление профиля пользователя
-        /// </summary>
         public async Task<Profile?> UpdateProfile(string userId, string newUsername)
         {
             try

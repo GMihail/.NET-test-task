@@ -4,5 +4,3 @@
     public DateTime RegisteredDate { get; set; }
     public string Email { get; set; }
 }
-
-

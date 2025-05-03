@@ -44,7 +44,6 @@ namespace Shop.Services
             }
         }
     }
-
     public class SupabaseSessionHandler : IGotrueSessionPersistence<Session>
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -67,12 +66,10 @@ namespace Shop.Services
                     SameSite = SameSiteMode.Strict
                 });
         }
-
         public void DestroySession()
         {
             _httpContextAccessor.HttpContext?.Response.Cookies.Delete("sb-session");
         }
-
         public Session? LoadSession()
         {
             return _httpContextAccessor.HttpContext?.Request.Cookies["sb-session"] is string sessionJson

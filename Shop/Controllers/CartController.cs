@@ -131,14 +131,10 @@ namespace Shop.Controllers
             return quantity > 0 && quantity <= 100;
         }
 
-        private async Task<List<CartItemViewModel>> BuildCartViewModel(
-    string userId,
-    List<CartItem> cartItems)
+        private async Task<List<CartItemViewModel>> BuildCartViewModel(string userId, List<CartItem> cartItems)
         {
             var productIds = cartItems.Select(i => i.ProductId).Distinct().ToList();
             var products = new List<Product>();
-
-            // Альтернативный способ запроса товаров без проблем с переменной 'p'
             foreach (var id in productIds)
             {
                 var response = await _supabase

@@ -8,7 +8,7 @@ public class Product : BaseModel
     public long Id { get; set; }
 
     [Column("name")]
-    public string Name { get; set; } = "Неизвестный товар"; // Значение по умолчанию
+    public string Name { get; set; } = "Неизвестный товар";
 
     [Column("price")]
     public decimal Price { get; set; } = 0;
