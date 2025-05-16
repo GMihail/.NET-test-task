@@ -29,9 +29,9 @@
     <div class="row">
         <div class="col-md-6">
             <h2>Контакты</h2>
-            <p><i class="bi bi-geo-alt-fill"></i> Казань, ул.Товарищеская, д.31А</p>
+            <p><i class="bi bi-geo-alt-fill"></i> Казань, проспект Ибрагимова, д.58</p>
             <p><i class="bi bi-telephone"></i> 8 800 555 35 35</p>
-            <p><i class="bi bi-envelope"></i> shop@example.com</p>
+            <p><i class="bi bi-envelope"></i> ACRELIS@example.com</p>
             <p><i class="bi bi-clock"></i> Пн-Пт: 9:00–20:00<br>Сб-Вс: 10:00–18:00</p>
         </div>
         <div class="col-md-6">
@@ -58,7 +58,7 @@
             ymaps.ready(init);
 
             function init() {
-                var shopLocation = [55.783585, 49.157034];
+                var shopLocation = [55.820126, 49.095868];
 
                 var map = new ymaps.Map("yandex-map", {
                     center: shopLocation,
@@ -68,7 +68,7 @@
 
                 var placemark = new ymaps.Placemark(shopLocation, {
                     hintContent: 'Мы находимся здесь',
-                    balloonContent: 'Отделение "ДАС №1"<br>ул.Товарищеская, д.31А'
+                    balloonContent: 'Проспект Ибрагимова, д.58<br> Офис 102'
                 }, {
                     iconLayout: 'default#image',
                     iconImageHref: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/icons/shop.svg',
