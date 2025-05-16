@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>E:\GitProjects\.NET-test-task\Shop\bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2025-05-03T12:51:25.4077486Z||;True|2025-05-03T15:24:17.7501330+03:00||;True|2025-05-02T23:34:05.7374804+03:00||;True|2025-05-02T22:50:38.3678088+03:00||;True|2025-05-02T21:26:53.7641391+03:00||;True|2025-04-14T23:01:03.9752025+03:00||;True|2025-04-14T22:01:28.6768317+03:00||;True|2025-04-14T21:45:13.1706301+03:00||;</History>
+    <_PublishTargetUrl>C:\Users\ADMIN\Desktop\.NET-test-task\Shop\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-05-16T12:55:58.2455265Z;True|2025-05-03T15:51:25.4077486+03:00;True|2025-05-03T15:24:17.7501330+03:00;True|2025-05-02T23:34:05.7374804+03:00;True|2025-05-02T22:50:38.3678088+03:00;True|2025-05-02T21:26:53.7641391+03:00;True|2025-04-14T23:01:03.9752025+03:00;True|2025-04-14T22:01:28.6768317+03:00;True|2025-04-14T21:45:13.1706301+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
